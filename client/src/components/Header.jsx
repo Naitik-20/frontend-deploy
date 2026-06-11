@@ -137,7 +137,7 @@ const closeMegaMenu = () => {
     {/* Logo */}
     <Link to="/" className="modern-logo">
       <img
-      src="logo.png"
+      src="uploads/logo.png"
         alt="Dr Snoopy"
       />
     </Link>
