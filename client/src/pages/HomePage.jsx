@@ -1347,7 +1347,7 @@ rel="stylesheet"
 
   min-height:700px;
 
-  background-image:url("uploads/hero.png");
+  background-image:url("src/uploads/hero.png");
   background-size:cover;
   background-position:center;
 
