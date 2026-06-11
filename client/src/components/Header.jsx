@@ -112,13 +112,15 @@ const closeMegaMenu = () => {
   const avatarLetter = displayName.charAt(0).toUpperCase();
 
   const openAdminDashboard = () => {
-    const token = localStorage.getItem('token');
-    window.location.href = token
-    const CLIENT_URL = import.meta.env.VITE_CLIENT_URL || 'http://localhost:5174';
+  const token = localStorage.getItem('token');
+  const CLIENT_URL =
+    import.meta.env.VITE_CLIENT_URL ||
+    'https://your-client-vercel-url.vercel.app';
 
-      ? `${CLIENT_URL}/?token=${encodeURIComponent(token)}`
-      : `${CLIENT_URL}/`;
-  };
+  window.location.href = token
+    ? `${CLIENT_URL}/?token=${encodeURIComponent(token)}`
+    : `${CLIENT_URL}/`;
+};
 
   const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
