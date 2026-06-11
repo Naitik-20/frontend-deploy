@@ -1431,7 +1431,7 @@ import { SlidersHorizontal, ArrowUpDown, ChevronLeft, ChevronRight } from 'lucid
 import { getCategories } from './services/categoryService';
 
 const BACKEND_URL = 'https://dr-snoopy2.onrender.com';
-const CLIENT_URL = import.meta.env.VITE_CLIENT_URL || 'http://localhost:5174';
+const CLIENT_URL = import.meta.env.VITE_CLIENT_URL || 'https://dr-snoopy2.onrender.com/';
 //       `${CLIENT_URL}/?token=${token}`;
 
 // const getProductImage = (product) => {
