@@ -1,0 +1,5 @@
+import { useAdminDashboard } from '../../hooks/useAdminDashboard';
+export default function ConsultationForm() {
+  const { consultationForm, editingConsultation, handleConsultationChange, handleSubmitConsultation, resetConsultationForm } = useAdminDashboard();
+  return <form className="admin-form-pane" onSubmit={handleSubmitConsultation}><div className="form-section-title">{editingConsultation ? 'Edit Consultation Item' : 'Add Consultation Item'}</div>{['title','highlight','image','sortOrder'].map((f) => <div className="form-group" key={f}><label>{f}</label><input className="form-input" name={f} value={consultationForm[f] || ''} onChange={handleConsultationChange}/></div>)}<label className="checkbox-row"><input type="checkbox" name="isActive" checked={consultationForm.isActive} onChange={handleConsultationChange}/> Active</label><div className="form-action-bar"><button type="button" className="dashboard-clear-btn" onClick={resetConsultationForm}>Clear</button><button className="dashboard-submit-btn">Save Item</button></div></form>;
+}

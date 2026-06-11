@@ -1,0 +1,5 @@
+import { useAdminDashboard } from '../../hooks/useAdminDashboard';
+export default function PickupStoreForm() {
+  const { pickupStoreForm, editingPickupStore, handlePickupStoreChange, handleSubmitPickupStore, resetPickupStoreForm } = useAdminDashboard();
+  return <form className="admin-form-pane" onSubmit={handleSubmitPickupStore}><div className="form-section-title">{editingPickupStore ? 'Edit Pickup Store' : 'Add Pickup Store'}</div>{['name','phone','address','city','state','pincode'].map((field) => <div className="form-group" key={field}><label>{field}</label><input className="form-input" name={field} value={pickupStoreForm[field] || ''} onChange={handlePickupStoreChange}/></div>)}<label className="checkbox-row"><input type="checkbox" name="isActive" checked={pickupStoreForm.isActive} onChange={handlePickupStoreChange}/> Active</label><div className="form-action-bar"><button type="button" className="dashboard-clear-btn" onClick={resetPickupStoreForm}>Clear</button><button className="dashboard-submit-btn">Save Store</button></div></form>;
+}

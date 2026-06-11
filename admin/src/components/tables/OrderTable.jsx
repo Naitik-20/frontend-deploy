@@ -1,0 +1,7 @@
+import { Eye, Trash2 } from 'lucide-react';
+import { useAdminDashboard } from '../../hooks/useAdminDashboard';
+export default function OrderTable() {
+  const { filteredOrders, loadingOrders, setSelectedOrder, handleUpdateOrder, handleDeleteOrder } = useAdminDashboard();
+  if (loadingOrders) return <div className="tab-loader">Loading orders...</div>;
+  return <div className="products-table-wrapper"><table className="products-table"><thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th><th>Payment</th><th className="align-center">Actions</th></tr></thead><tbody>{filteredOrders.map((o) => <tr key={o._id}><td><strong>{o.orderNumber}</strong><div className="prod-cell-id">{new Date(o.createdAt).toLocaleString()}</div></td><td>{o.customer?.name || o.shippingAddress?.fullName || '-'}</td><td>Rs. {Number(o.total || 0).toFixed(2)}</td><td><select value={o.orderStatus || 'PLACED'} onChange={(e) => handleUpdateOrder(o._id, { orderStatus: e.target.value })}><option>PLACED</option><option>CONFIRMED</option><option>SHIPPED</option><option>OUT_FOR_DELIVERY</option><option>DELIVERED</option><option>CANCELLED</option></select></td><td>{o.paymentStatus || '-'}</td><td className="align-center"><button className="action-edit-btn" onClick={() => setSelectedOrder(o)}><Eye size={16}/></button><button className="action-delete-btn" onClick={() => handleDeleteOrder(o)}><Trash2 size={16}/></button></td></tr>)}</tbody></table></div>;
+}
