@@ -5,6 +5,7 @@ import {
   ShoppingCart, Search, Menu, X, User, LogOut, ChevronDown, ChevronRight,
 } from 'lucide-react';
 import { getCategories } from '../services/categoryService';
+import logoSrc from '../uploads/logo.png';
 
 export default function Header({
   searchTerm, setSearchTerm, cartCount, onCartClick, onLoginClick, user, onLogout,
@@ -137,7 +138,7 @@ const closeMegaMenu = () => {
     {/* Logo */}
     <Link to="/" className="modern-logo">
       <img
-      src="src/uploads/logo.png"
+        src={logoSrc}
         alt="Dr Snoopy"
       />
     </Link>

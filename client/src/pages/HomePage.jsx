@@ -7,6 +7,7 @@ import {
   BadgeCheck
 } from 'lucide-react';
 import '../Home.css';
+import heroImage from '../uploads/hero.png';
 
 import { getCategories } from '../services/categoryService';
 import { getBrandsWeLove } from '../services/brandWeLoveService';
@@ -1347,7 +1348,7 @@ rel="stylesheet"
 
   min-height:700px;
 
-  background-image:url("src/uploads/hero.png");
+  background-image:url("${heroImage}");
   background-size:cover;
   background-position:center;
 
