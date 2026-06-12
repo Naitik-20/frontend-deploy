@@ -36,6 +36,7 @@
 
 html {
   overflow-y: scroll;
+  overflow-x: hidden;
   scrollbar-gutter: stable;
 }
 
@@ -46,6 +47,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
+  overflow-x: hidden;
+}
+
+#root {
+  min-width: 0;
   overflow-x: hidden;
 }
 

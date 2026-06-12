@@ -1544,6 +1544,7 @@ rel="stylesheet"
   .premium-hero{
     min-height:auto;
     padding:60px 0;
+    overflow-x:hidden;
   }
 
   .premium-hero-container{
@@ -1552,6 +1553,8 @@ rel="stylesheet"
     gap:32px;
     min-height:auto;
     padding:0 24px;
+    width:100%;
+    max-width:100%;
   }
 
   .premium-title{
@@ -1564,8 +1567,13 @@ rel="stylesheet"
   }
 
   .premium-feature-card{
+    position:static;
     width:100%;
     max-width:100%;
+    transform:none;
+    right:auto;
+    top:auto;
+    margin-top:20px;
   }
 
   .premium-badge{
