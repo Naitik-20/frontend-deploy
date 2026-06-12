@@ -1543,27 +1543,95 @@ rel="stylesheet"
 
   .premium-hero{
     min-height:auto;
-    padding:80px 0;
+    padding:60px 0;
   }
 
   .premium-hero-container{
     flex-direction:column;
     align-items:flex-start;
-    gap:40px;
+    gap:32px;
     min-height:auto;
+    padding:0 24px;
   }
 
   .premium-title{
-    font-size:48px;
+    font-size:clamp(32px, 8vw, 48px);
   }
 
   .premium-desc{
-    font-size:18px;
+    font-size:16px;
+    max-width:100%;
   }
 
   .premium-feature-card{
     width:100%;
-    max-width:350px;
+    max-width:100%;
+  }
+
+  .premium-badge{
+    font-size:13px;
+    padding:10px 18px;
+  }
+
+  .pet-category-title{
+    font-size:clamp(28px, 7vw, 36px);
+  }
+
+  .pet-scroll-btn{
+    top:56px;
+    width:38px;
+    height:38px;
+  }
+
+  .pet-category-grid{
+    gap:20px;
+  }
+}
+
+@media(max-width:480px){
+  .premium-hero{
+    padding:40px 0;
+  }
+
+  .premium-hero-container{
+    padding:0 16px;
+  }
+
+  .premium-title{
+    font-size:clamp(24px, 10vw, 34px);
+    line-height:1.05;
+  }
+
+  .premium-desc{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  .view-all-link{
+    padding:10px 14px;
+    font-size:14px;
+  }
+
+  .premium-feature-card{
+    width:100%;
+    max-width:100%;
+  }
+
+  .pet-category-title{
+    font-size:28px;
+    margin-bottom:35px;
+  }
+
+  .pet-circle-card span{
+    font-size:18px;
+  }
+
+  .pet-category-grid{
+    gap:20px;
+  }
+
+  .pet-category-grid-scroll{
+    padding:4px 16px 18px;
   }
 }
 

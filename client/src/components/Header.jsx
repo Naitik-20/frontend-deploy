@@ -58,6 +58,7 @@ const closeMegaMenu = () => {
 }, []);
 
   const close = () => { setIsMobileMenuOpen(false); setActiveMobileCategory(null); };
+  const toggleMobileMenu = () => { setIsMobileMenuOpen((value) => !value); };
 
   const handleSearchSubmit = (e) => { e.preventDefault(); navigate('/shop'); };
 
@@ -143,8 +144,17 @@ const closeMegaMenu = () => {
       />
     </Link>
 
+    <button
+      type="button"
+      className="mobile-menu-btn"
+      onClick={toggleMobileMenu}
+      aria-label="Toggle navigation"
+    >
+      {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+    </button>
+
     {/* Navigation */}
-    <nav className="modern-nav">
+    <nav className={`modern-nav ${isMobileMenuOpen ? 'open' : ''}`}>
       <Link
   to="/"
   className={`modern-nav-link ${
@@ -849,12 +859,44 @@ const closeMegaMenu = () => {
 
 @media(max-width:1024px){
 
+  .modern-header-inner{
+    flex-wrap:wrap;
+    align-items:center;
+    gap:12px;
+  }
+
   .modern-nav{
     display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:rgba(255,255,255,.96);
+    flex-direction:column;
+    gap:0;
+    padding:16px;
+    border-bottom:1px solid rgba(11,61,46,.08);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+    z-index:9999;
+  }
+
+  .modern-nav.open{
+    display:flex;
+  }
+
+  .modern-nav-link{
+    width:100%;
+    padding:14px 16px;
+    border-radius:14px;
+    background:transparent;
   }
 
   .modern-search{
     width:220px;
+  }
+
+  .mobile-menu-btn{
+    display:flex;
   }
 }
 
@@ -867,6 +909,29 @@ const closeMegaMenu = () => {
   .modern-header-inner{
     padding:12px 16px;
   }
+
+  .modern-actions{
+    gap:10px;
+  }
+
+  .modern-icon-btn{
+    width:42px;
+    height:42px;
+  }
+}
+
+.mobile-menu-btn{
+  display:none;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:none;
+  background:#ffffff;
+  color:#0b5c4b;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
 }
       `}</style>
     </>
